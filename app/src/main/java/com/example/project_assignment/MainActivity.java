@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("CONTINUE_BUTTON", "Continue to second activity");
+                Log.d("MainActivity ==>", "Continue to about us");
 
                 Intent intent = new Intent(MainActivity.this, AboutUs.class);
                 startActivity(intent);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
             for (int i = 0; i < travels.length; i++) {
                 travelCountrys.add(travels[i]);
-                Log.d("Async ==>", "Added: " + travels[i]);
+                Log.d("MainAcitivity Async ==>", "Added: " + travels[i]);
             }
 
             adapter.notifyDataSetChanged();
