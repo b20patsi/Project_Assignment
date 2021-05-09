@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#333"
     tools:context=".MainActivity">
 
     <TextView
@@ -14,7 +15,7 @@
         android:height="70dp"
         android:textColor="#ff5e13"
         android:textSize="45dp"
-        android:background="#333"
+        android:background="#111"
         android:text="Resamera" />
 
     <LinearLayout
@@ -28,9 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Ditt personliga resebolag!"
             android:textSize="24dp"
-            android:textColor="#333"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"/>
+            android:textColor="#ff5e13"/>
 
         <Button
             android:id="@+id/aboutUs"
@@ -39,8 +38,8 @@
             android:text="Om oss"
             android:backgroundTint="#111"
             android:textColor="#ff5e13"
-            android:layout_marginLeft="30dp"
-            android:layout_marginStart="30dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"/>
 
     </LinearLayout>
 
@@ -49,6 +48,8 @@
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="50dp"
+        android:divider="#ff5e13"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>
