@@ -3,10 +3,13 @@ package com.example.project_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Travel> travelCountrys = new ArrayList<>();
     private ArrayAdapter<Travel> adapter;
     private ListView listView;
+    private Button aboutUs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,18 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new ArrayAdapter<Travel>(MainActivity.this, R.layout.list_item_textview,travelCountrys);
         listView.setAdapter(adapter);
+
+        aboutUs = findViewById(R.id.aboutUs);
+
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("CONTINUE_BUTTON", "Continue to second activity");
+
+                Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @SuppressLint("StaticFieldLeak")
