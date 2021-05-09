@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
             Gson gson = new Gson();
             Travel[] travels;
             travels = gson.fromJson(json,Travel[].class);
+            travelCountrys.clear();
+
+            for (int i = 0; i < travels.length; i++) {
+                travelCountrys.add(travels[i]);
+                Log.d("Async ==>", "Added: " + travels[i]);
+            }
 
             adapter.notifyDataSetChanged();
         }
