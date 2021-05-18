@@ -21,16 +21,19 @@ public class MainActivity2 extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        String country = intent.getStringExtra("name_of_country");
-        String location = intent.getStringExtra("name_of_location");
+        String country = intent.getStringExtra("country");
+        String location = intent.getStringExtra("location");
+        String url = intent.getStringExtra("url");
 
         webView = findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        WebViewClient WebViewClient = new WebViewClient();
-        webView.setWebViewClient(WebViewClient);
+        WebViewClient NewWebViewClient = new WebViewClient();
+        webView.setWebViewClient(NewWebViewClient);
 
         textView = findViewById(R.id.test_text);
+
+        webView.loadUrl(url);
 
         textView.setText(country + " ligger i " + location);
     }
