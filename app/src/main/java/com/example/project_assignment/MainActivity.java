@@ -68,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("country", sendInfo.getName());
                 intent.putExtra("location", sendInfo.getLocation());
                 intent.putExtra("url", sendInfo.getUrl());
+                intent.putExtra("company", sendInfo.getCompany());
                 startActivity(intent);
             }
         });
