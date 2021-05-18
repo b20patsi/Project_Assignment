@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private WebView webView;
     private TextView textView;
 
     @Override
@@ -19,6 +23,12 @@ public class MainActivity2 extends AppCompatActivity {
 
         String country = intent.getStringExtra("name_of_country");
         String location = intent.getStringExtra("name_of_location");
+
+        webView = findViewById(R.id.webview);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        WebViewClient WebViewClient = new WebViewClient();
+        webView.setWebViewClient(WebViewClient);
 
         textView = findViewById(R.id.test_text);
 
