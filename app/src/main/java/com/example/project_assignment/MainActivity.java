@@ -8,9 +8,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -50,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity ==>", "Continue to about us");
 
                 Intent intent = new Intent(MainActivity.this, AboutUs.class);
+                startActivity(intent);
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Travel toastMsg = travelCountrys.get(position);
+
+                Log.d("OnClick ==>","Country clicked: " + toastMsg.getName());
+
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("name_of_country", toastMsg.getName());
+                intent.putExtra("name_of_location", toastMsg.getLocation());
                 startActivity(intent);
             }
         });
