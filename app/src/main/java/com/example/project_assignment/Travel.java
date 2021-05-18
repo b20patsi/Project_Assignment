@@ -7,7 +7,8 @@ public class Travel {
     private String name;
     private String company;
     private String location;
-    private int cost;
+    @SerializedName("category")
+    private String url;
 
     @Override
     public String toString() {
@@ -26,7 +27,7 @@ public class Travel {
         return location;
     }
 
-    public int getCost() {
-        return cost;
+    public String getUrl() {
+        return url;
     }
 }
