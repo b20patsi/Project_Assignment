@@ -60,13 +60,14 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Travel toastMsg = travelCountrys.get(position);
+                Travel sendInfo = travelCountrys.get(position);
 
-                Log.d("OnClick ==>","Country clicked: " + toastMsg.getName());
+                Log.d("OnClick ==>","Country clicked: " + sendInfo.getName());
 
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("name_of_country", toastMsg.getName());
-                intent.putExtra("name_of_location", toastMsg.getLocation());
+                intent.putExtra("country", sendInfo.getName());
+                intent.putExtra("location", sendInfo.getLocation());
+                intent.putExtra("url", sendInfo.getUrl());
                 startActivity(intent);
             }
         });
