@@ -32,7 +32,7 @@
             android:textColor="#ff5e13"/>
 
         <Button
-            android:id="@+id/aboutUs"
+            android:id="@+id/about_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Om oss"
@@ -44,7 +44,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/mainListView"
+        android:id="@+id/main_listview"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_gravity="center_horizontal"

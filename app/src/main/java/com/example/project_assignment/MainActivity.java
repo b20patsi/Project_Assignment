@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listView = findViewById(R.id.mainListView);
+        listView = findViewById(R.id.main_listview);
 
         new JsonTask().execute("https://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?type=b20patsi");
 
         adapter = new ArrayAdapter<Travel>(MainActivity.this, R.layout.list_item_textview,travelCountrys);
         listView.setAdapter(adapter);
 
-        aboutUs = findViewById(R.id.aboutUs);
+        aboutUs = findViewById(R.id.about_us);
 
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -17,7 +17,7 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
 
-        backBtn = findViewById(R.id.moveBack);
+        backBtn = findViewById(R.id.move_back);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

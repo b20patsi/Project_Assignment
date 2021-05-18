@@ -31,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
         WebViewClient NewWebViewClient = new WebViewClient();
         webView.setWebViewClient(NewWebViewClient);
 
-        textView = findViewById(R.id.test_text);
+        textView = findViewById(R.id.receive_text);
 
         webView.loadUrl(url);
 
