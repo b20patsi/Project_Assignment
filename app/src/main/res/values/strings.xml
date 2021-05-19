@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Project_Assignment</string>
-    <string name="aboutUs">Bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-         bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla</string>
+    <string name="aboutUs">Vi på Resamera förgyller era drömresor med varierande destinationer. Vi har en resa för alla plånböcker och alla storlekar på familjen.
+    Om du väljer att resa själv så ska du vara över 18 år, är du under 18 år behöver du ha sällskap av minst en vuxen. I priset på resorna ingår även en försäkring om
+    något skulle inträffa under resan. För övriga frågor kontokta oss gärna på 010-001122.</string>
 </resources>
