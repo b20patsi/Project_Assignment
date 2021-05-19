@@ -3,7 +3,9 @@ package com.example.project_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -29,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,20 +39,12 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<Travel> adapter;
     private ListView listView;
     private Button aboutUs;
-    private Button aZ;
-    private Button zA;
-    private Button priceUnder;
-    private Button priceOver;
-    private SQLiteDatabase database;
-    private DatabaseHelper databaseHelper;
+    private Travel[] travels;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        databaseHelper = new DatabaseHelper(this);
-        database = databaseHelper.getWritableDatabase();
 
         listView = findViewById(R.id.main_listview);
 
@@ -59,10 +54,6 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         aboutUs = findViewById(R.id.about_us);
-        aZ = findViewById(R.id.a_z);
-        zA = findViewById(R.id.z_a);
-        priceUnder = findViewById(R.id.price_under_3000);
-        priceOver = findViewById(R.id.price_over_3000);
 
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,38 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("url", sendInfo.getUrl());
                 intent.putExtra("company", sendInfo.getCompany());
                 startActivity(intent);
-            }
-        });
-
-        aZ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("MainActivity ==>", "Sort by A-Z");
-
-            }
-        });
-
-        zA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("MainActivity ==>", "Sort by Z-A");
-
-            }
-        });
-
-        priceUnder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("MainActivity ==>", "Sort by price under 3000kr");
-
-            }
-        });
-
-        priceOver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.d("MainActivity ==>", "Sort by price over 3000kr");
-
             }
         });
     }
@@ -166,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String json) {
             Gson gson = new Gson();
-            Travel[] travels;
+
             travels = gson.fromJson(json,Travel[].class);
             travelCountrys.clear();
 
