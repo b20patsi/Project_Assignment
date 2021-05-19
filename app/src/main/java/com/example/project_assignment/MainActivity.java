@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,11 +40,16 @@ public class MainActivity extends AppCompatActivity {
     private Button zA;
     private Button priceUnder;
     private Button priceOver;
+    private SQLiteDatabase database;
+    private DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        databaseHelper = new DatabaseHelper(this);
+        database = databaseHelper.getWritableDatabase();
 
         listView = findViewById(R.id.main_listview);
 
