@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("location", sendInfo.getLocation());
                 intent.putExtra("url", sendInfo.getUrl());
                 intent.putExtra("company", sendInfo.getCompany());
+                intent.putExtra("cost", sendInfo.getCost());
                 startActivity(intent);
             }
         });
