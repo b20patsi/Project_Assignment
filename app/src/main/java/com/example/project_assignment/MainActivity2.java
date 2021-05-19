@@ -29,6 +29,7 @@ public class MainActivity2 extends AppCompatActivity {
         String location = intent.getStringExtra("location");
         String url = intent.getStringExtra("url");
         String company = intent.getStringExtra("company");
+        String cost = intent.getStringExtra("cost");
 
         webView = findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
@@ -40,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         webView.loadUrl(url);
 
-        textView.setText("Vi på " + company + " flyger er till vackra " + country + " som ligger i " + location + "!");
+        textView.setText("Vi på " + company + " flyger er till vackra " + country + " som ligger i " + location + ". Priset för denna resa är " + cost + " kr per vuxen, barn reser för halva priset.");
 
         backBtn = findViewById(R.id.move_back);
 
