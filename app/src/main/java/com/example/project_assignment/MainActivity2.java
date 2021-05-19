@@ -31,6 +31,9 @@ public class MainActivity2 extends AppCompatActivity {
         String company = intent.getStringExtra("company");
         String cost = intent.getStringExtra("cost");
 
+        int child = Integer.parseInt(cost);
+        child = child / 3;
+
         webView = findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -41,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         webView.loadUrl(url);
 
-        textView.setText("Vi på " + company + " flyger er till vackra " + country + " som ligger i " + location + ". Priset för denna resa är " + cost + " kr per vuxen, barn reser för halva priset.");
+        textView.setText("Vi på " + company + " flyger er till vackra " + country + " som ligger i " + location + ". Priset för denna resa är " + cost + " kr per vuxen och " + child + " kr per barn");
 
         backBtn = findViewById(R.id.move_back);
 
