@@ -25,6 +25,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<Travel> adapter;
     private ListView listView;
     private Button aboutUs;
+    private Button aZ;
+    private Button zA;
+    private Button priceUnder;
+    private Button priceOver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         aboutUs = findViewById(R.id.about_us);
+        aZ = findViewById(R.id.a_z);
+        zA = findViewById(R.id.z_a);
+        priceUnder = findViewById(R.id.price_under_3000);
+        priceOver = findViewById(R.id.price_over_3000);
 
         aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +81,38 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("url", sendInfo.getUrl());
                 intent.putExtra("company", sendInfo.getCompany());
                 startActivity(intent);
+            }
+        });
+
+        aZ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity ==>", "Sort by A-Z");
+
+            }
+        });
+
+        zA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity ==>", "Sort by Z-A");
+
+            }
+        });
+
+        priceUnder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity ==>", "Sort by price under 3000kr");
+
+            }
+        });
+
+        priceOver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity ==>", "Sort by price over 3000kr");
+
             }
         });
     }
